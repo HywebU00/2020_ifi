@@ -1,53 +1,29 @@
 // 自行加入的JS請寫在這裡
 $(function() {
     // 首頁輪播
-    $('.mpSlider').slick({
+    $('.mpSlider ul').slick({
         mobileFirst: true,
-        dots: true,
+        dots: false,
         arrow: true,
         infinite: true,
         speed: 500,
-        autoplay: true,
+        autoplay: false,
         fade: true,
         lazyLoaded: true,
         lazyLoad: 'ondemand',
         ease: 'ease'
     });
-    // 廣告輪播
-    $('.adSlider').slick({
+    $('.event ul').slick({
         mobileFirst: true,
         dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        autoplay: true,
         arrow: true,
+        infinite: true,
+        speed: 500,
+        autoplay: false,
+        fade: true,
         lazyLoaded: true,
         lazyLoad: 'ondemand',
-        ease: 'ease',
-        responsive: [{
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 5,
-                slidesToScroll: 1,
-                arrows: true
-            }
-        },{
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                arrows: true
-            }
-        },{
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                arrows: true
-            }
-        }]
+        ease: 'ease'
     });
     //燈箱slick+lightBox組合
     $('.cp_slider').slick({
@@ -97,11 +73,11 @@ $(function() {
         lazy: true
     });
      // cp_photo
-    $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
+     $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
         var i = (currentSlide ? currentSlide : 0) + 1;
         $('.controls').html(i + '/' + slick.slideCount);
     });
-    $('.Slider-for').slick({
+     $('.Slider-for').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
@@ -112,7 +88,7 @@ $(function() {
         asNavFor: '.Slider-nav',
         infinite: true
     });
-    $('.Slider-nav').slick({
+     $('.Slider-nav').slick({
         slidesToShow: 2,
         slidesToScroll: 1,
         asNavFor: '.Slider-for',
@@ -122,5 +98,20 @@ $(function() {
         focusOnSelect: true,
         infinite: true
     });
-    
+
+ });
+
+$(window).on("load resize scroll", function(e) {
+    var window_H = $(window).innerHeight();
+    var windowTop = $(window).scrollTop();
+    $('.featured ul li.topic,.news ul li .news__pic,.hotTopic ul li.topic a').each(function(index, el) {
+          // 可以+130 讓圖進入多點再跑動畫
+          var imgTop = Math.floor($(this).offset().top - windowTop + 50);
+          //imgTop < window_H 是指進入到最底部
+          //imgTop>0 是指還沒滾到最上方
+          //同時條件成立 代表物件在看得到的地方才會trigger動畫
+          if (imgTop < window_H && imgTop > 0) {
+            $(this).addClass('effect');
+        }
+    });
 });

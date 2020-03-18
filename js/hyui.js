@@ -10,13 +10,13 @@ $(function() {
     ///////////////// 變數 ////////////////
     /*-----------------------------------*/
     var _window = $(window),
-        ww = _window.outerWidth(),
-        wh = _window.height(),
-        _body = $('body'),
-        wwNormal = 1400,
-        wwMedium = 992,
-        wwSmall = 768,
-        wwxs = 576;
+    ww = _window.outerWidth(),
+    wh = _window.height(),
+    _body = $('body'),
+    wwNormal = 1400,
+    wwMedium = 992,
+    wwSmall = 768,
+    wwxs = 576;
     /*-----------------------------------*/
     //////////// nojs 先移除////////////////
     /*-----------------------------------*/
@@ -24,21 +24,21 @@ $(function() {
     /*-----------------------------------*/
     //////////// nav如果有兩個選單///////////
     /*-----------------------------------*/
-    var _navLength = $('.navigation ul').length;
-    if (_navLength > 1) {
-        $('.navigation ul:nth-child(1)').addClass('left_nav');
-    }
-    $('.navigation').has('.language').addClass('have_language');
+    // var _navLength = $('.navigation ul').length;
+    // if (_navLength > 1) {
+    //     $('.navigation ul:nth-child(1)').addClass('left_nav');
+    // }
+    // $('.navigation').has('.language').addClass('have_language');
     /*-----------------------------------*/
     /////// header選單 tab及 fix設定////////
     /*-----------------------------------*/
     var _menu = $('.menu');
     _menu.find('li').has('ul').addClass('hasChild');
     var liHasChild = _menu.find('li.hasChild'),
-        liHasChild_level1 = $('.menu ul').children('li.hasChild'),
-        liHasChild_level2 = $('.menu ul ul').children('li.hasChild'),
-        liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild'),
-        subMenuWidth = liHasChild.first().children('ul').outerWidth();
+    liHasChild_level1 = $('.menu ul').children('li.hasChild'),
+    liHasChild_level2 = $('.menu ul ul').children('li.hasChild'),
+    liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild'),
+    subMenuWidth = liHasChild.first().children('ul').outerWidth();
     /*-----------------------------------*/
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
@@ -46,11 +46,12 @@ $(function() {
     $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
     var menu_status = false;
     var _sidebar = $('.sidebar'),
-        _search = $('.search'),
-        _nav = $('.navigation'),
-        _sidebarClose = $('.sidebarClose'),
-        _sidebarCtrl = $('.sidebarCtrl'),
-        _overlay = $('.menu_overlay');
+    _search = $('.search'),
+    _nav = $('.navigation'),
+    _language = $('.language'),
+    _sidebarClose = $('.sidebarClose'),
+    _sidebarCtrl = $('.sidebarCtrl'),
+    _overlay = $('.menu_overlay');
     _mArea = $('.m_area');
     _sidebarCtrl.append('<span></span><span></span><span></span>');
     var search_mode = false;
@@ -87,17 +88,30 @@ $(function() {
     });
     _overlay.off("mouseenter");
     // 無障礙tab設定
+    // liHasChild.children('a').keyup(function() {
+    //     $(this).siblings("ul").fadeIn();
+    //     $(this).parent("li").siblings().focus(function() {
+    //         $(this).hide();
+    //     });
+    // });
+    // _menu.find('li').keyup(function() {
+    //     $(this).siblings().children('ul').hide();
+    // });
+    // _menu.find('li:last>a').focusout(function() {
+    //     _menu.find('li ul').hide();
+    // });
     liHasChild.children('a').keyup(function() {
-        $(this).siblings("ul").fadeIn();
-        $(this).parent("li").siblings().focus(function() {
-            $(this).hide();
-        });
+      $('.megamenu').show();
+      $(this).siblings('.megamenu').show();
+      $(this).parent("li").siblings().focus(function() {
+        $(this).hide();
     });
+  });
     _menu.find('li').keyup(function() {
-        $(this).siblings().children('ul').hide();
+        $(this).siblings().children('.megamenu').hide();
     });
     _menu.find('li:last>a').focusout(function() {
-        _menu.find('li ul').hide();
+        _menu.find('li .megamenu').hide();
     });
     // 切換PC/Mobile 選單
     function mobileMenu() {
@@ -111,6 +125,7 @@ $(function() {
             _overlay.hide();
             _nav.prependTo(_mArea);
             _menu.prependTo(_mArea);
+            _language.prependTo(_mArea)
             _search.prependTo(_body);
             _search.addClass('m_search');
             _mArea.css({
@@ -118,11 +133,14 @@ $(function() {
             });
             liHasChild_level1.on({
                 mouseenter: function() {
-                    $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
+                    // $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
+                    $(this).children('.megamenu').stop(true, true).slideDown('600', 'easeOutQuint');
                 },
                 mouseleave: function() {
-                    $(this).parent().siblings('ul').hide();
-                    $(this).children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
+                    // $(this).parent().siblings('ul').hide();
+                    // $(this).children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
+                    $(this).parent().siblings('.megamenu').hide();
+                    $(this).children('.megamenu').stop(true, true).slideToggle('600', 'easeOutQuint');
                 }
             });
             // 副選單點出
@@ -132,13 +150,17 @@ $(function() {
             });
             // 第一層選單
             liHasChild_level1.off().on('click', function(e) {
-                $(this).siblings('li').find('ul').stop(true, true).slideUp('600', 'easeOutQuint');
-                $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
+                // $(this).siblings('li').find('ul').stop(true, true).slideUp('600', 'easeOutQuint');
+                // $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
+                $(this).siblings('li').find('.megamenu').stop(true, true).slideUp('600', 'easeOutQuint');
+                $(this).children('.megamenu').stop(true, true).slideToggle('600', 'easeOutQuint');
             });
             // 第二層選單
             liHasChild_level2.off().on('click', function(e) {
+                // $(this).siblings('li').children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
+                // $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
                 $(this).siblings('li').children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
-                $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
+                $(this).children('ul').stop(true, true).slideToggle('600', 'easeOutQuint');
             });
             // 第三層選單
             liHasChild_level3.off().on('click', function(e) {
@@ -159,7 +181,9 @@ $(function() {
             _body.removeClass('noscroll');
             _nav.prependTo('.header .container');
             _search.appendTo('.header .container');
+            _language.appendTo('.header .container');
             _menu.appendTo('.header .container');
+
             _search.removeClass('m_search');
             _search.show();
             search_mode = false;
@@ -167,21 +191,24 @@ $(function() {
             // 副選單滑出
             liHasChild.on({
                 mouseenter: function() {
-                    $(this).children('ul').stop(true, false).fadeIn();
+                    // $(this).children('ul').stop(true, false).fadeIn();
+                    $(this).children('.megamenu').stop(true, false).show();
                 },
                 mouseleave: function() {
-                    $(this).parent().siblings('ul').hide();
-                    $(this).children('ul').stop(true, false).fadeOut();
+                    // $(this).parent().siblings('ul').hide();
+                    // $(this).children('ul').stop(true, false).fadeOut();
+                    $(this).parent().siblings('.megamenu').hide();
+                    $(this).children('.megamenu').stop(true, false).hide();
                 }
             });
-            liHasChild.off('click');
+            // liHasChild.off('click');
             // 如果點在外面
-            $(document).on('touchend click', function(e) {
-                var target = e.target;
-                if (!$(target).is('.menu li a')) {
-                    $('.menu').find('li ul').hide();
-                }
-            });
+            // $(document).on('touchend click', function(e) {
+            //     var target = e.target;
+            //     if (!$(target).is('.menu li a')) {
+            //         $('.menu').find('li ul').hide();
+            //     }
+            // });
         }
     }
     //設定resize 計時器
@@ -214,9 +241,10 @@ $(function() {
         search_mode = false;
     });
     // 固定版頭
+    // var stickyMenuTop = $('.header .menu').offset().top,
     hh = Math.floor($('.header').outerHeight(true));
     if ($('header').has('menu')) {
-        var stickyMenuTop = Math.floor($('.header .menu').offset().top);
+        var stickyMenuTop = 160;
         // console.log(stickyMenuTop);
         hh = Math.floor($('.header').outerHeight(true));
         menuH = Math.floor(_menu.outerHeight(true));
@@ -233,6 +261,7 @@ $(function() {
             }
         });
     }
+    
     /*-----------------------------------*/
     //////////// notice訊息區塊 ////////////
     /*-----------------------------------*/
@@ -392,15 +421,15 @@ $(function() {
     function tabSet() {
         $('.tabs').each(function() {
             var _tab = $(this),
-                _tabItem = _tab.find('.tabItem'),
-                _tabItemA = _tabItem.children('a'),
-                _tabContent = _tab.find('.tabContent'),
-                tabwidth = _tab.width(),
-                tabItemHeight = _tabItem.outerHeight(),
-                tabContentHeight = _tab.find('.active').next().innerHeight(),
-                tiGap = 0,
-                tabItemLength = _tabItem.length,
-                tabItemWidth;
+            _tabItem = _tab.find('.tabItem'),
+            _tabItemA = _tabItem.children('a'),
+            _tabContent = _tab.find('.tabContent'),
+            tabwidth = _tab.width(),
+            tabItemHeight = _tabItem.outerHeight(),
+            tabContentHeight = _tab.find('.active').next().innerHeight(),
+            tiGap = 0,
+            tabItemLength = _tabItem.length,
+            tabItemWidth;
             _tab.find('.active').next('.tabContent').show();
             if (ww >= wwSmall) {
                 _tabContent.css('top', tabItemHeight);
@@ -419,9 +448,9 @@ $(function() {
 
             function tabs(e) {
                 var _tabItemNow = $(this).parent(),
-                    tvp = _tab.offset().top,
-                    tabIndex = _tabItemNow.index() / 2,
-                    scollDistance = tvp + tabItemHeight * tabIndex - hh;
+                tvp = _tab.offset().top,
+                tabIndex = _tabItemNow.index() / 2,
+                scollDistance = tvp + tabItemHeight * tabIndex - hh;
                 _tabItem.removeClass('active');
                 _tabItemNow.addClass('active');
                 if (ww <= wwSmall) {
@@ -656,7 +685,7 @@ $(function() {
         if ($('table').parents('.table_list').length == 0 && $('table').parents('.fix_th_table').length == 0 && $(this).parent('form').length == 0) {
             if ($('.scroltable-wrapper').length > 0) {
                 var stickyArrowTop = Math.floor($('.scroltable-wrapper').offset().top),
-                    thisScroll = Math.floor($(this).scrollTop());
+                thisScroll = Math.floor($(this).scrollTop());
                 if (thisScroll > stickyArrowTop - 230) {
                     $('.scroltable-wrapper .tablearrow_left').css('display', 'block');
                     $('.scroltable-wrapper .tablearrow_left').css({ "top": thisScroll - stickyArrowTop + 220 }, 100, 'easeOutQuint');

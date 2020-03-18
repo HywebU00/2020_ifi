@@ -1,66 +1,137 @@
 .language {
-    width: 140px;
-    font-weight: bold;
-    font-size: .75em;
-    text-shadow: 1px 1px 2px RGBA(0, 0, 0, .8);
+  width: 140px;
+  font-weight: bold;
+  font-size: .9em;
+  position: absolute;
+  right: 20px;
+  top: 78px;
+  @include screen('mobile') {
     position: relative;
-    >a {
-        display: block;
-        background: #555;
-        box-sizing: border-box;
-        color: #FFF;
-        padding: .2em 1em;
-        position: relative;
-        transition: .3s ease-out;
-        &:after {
-            position: absolute;
-            right: .8em;
-            top: 1em;
-            content: "";
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 6px 3px 0 3px;
-            border-color: #ffffff transparent transparent transparent;
-        }
-        &:before {
-            position: absolute;
-            width: 1px;
-            height: 1.6em;
-            right: 2em;
-            top: .4em;
-            content: "";
-            border-left: 1px solid #DDD;
-        }
-        &:focus {
-            box-shadow: none;
-            background: #444;
-        }
+    top: auto;
+    right: auto;
+    background: #fff;
+    width: 100%;
+    font-size: 1em;
+    @include box-shadow(0px 0px 4px RGBA(0, 0, 0, .4));
+    border-bottom: 1px solid #CCC;
+  }
+  >a {
+    display: block;
+    box-sizing: border-box;
+    color: #222;
+    padding: 1.4em 1em;
+    box-shadow: 0 0 5px RGBA(0, 0, 0, .5);
+    position: relative;
+    transition: .3s ease-out;
+    @include screen('mobile') {
+      box-shadow: 0 0 0;
+      padding: .5em 1em;
+      min-height: 2em;
+      line-height: 2em;
     }
-    ul {
-        background: #555;
-        padding: 1em 1.5em;
+    &:after {
+      position: absolute;
+      right: .8em;
+      top: 50%;
+      margin-top:  -4px;
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 4px 0 4px;
+      border-color: #666 transparent transparent transparent;
+      @include screen('mobile') {
+        content: '';
         position: absolute;
-        top: 2.35em;
-        left: 0;
-        width: 140px;
-        height: auto;
-        z-index: 9999;
-        @include li-reset;
-        li {
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            margin: 0 !important;
-            a {
-                display: block !important;
-                color: #FFF !important;
-                padding: .5em .5em .5em 1em !important;
-                transition: .3s ease-out;
-                &:hover, &:focus {
-                    background: RGBA(0, 0, 0, .3);
-                }
-            }
-        }
+        right: 16px;
+        top: 1.5em;
+        width: 5px;
+        line-height: 1.5em;
+        height: 5px;
+        border: 2px solid #222;
+        transform: rotate(45deg);
+        border-top: none;
+        border-left: none;
+        transition: .3s;
+      }
     }
+    &:before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 1.6em;
+      right: 2em;
+      top: 50%;
+      margin-top: -.8em;
+      border-left: 1px solid #DDD;
+      @include screen('mobile') {
+        display: none;
+      }
+    }
+    &:hover,&:focus {
+      background: $primaryColor;
+      color: #fff;
+      box-shadow: 0 0 0 0;
+      @include screen('mobile') {
+        background: #333;
+      }
+      &:after {
+        content: "";
+        border-color: #fff transparent transparent transparent;
+        @include screen('mobile') {
+          border: 2px solid #fff;
+          border-top: none;
+          border-left: none;
+        }
+      }
+      &:before {
+        content: "";
+        border-left: 1px solid #fff;
+      }
+    }
+  }
+  ul {
+    background: #333;
+    padding: 1em 1.5em;
+    position: absolute;
+    top: 4.4em;
+    left: 0;
+    width: 140px;
+    height: auto;
+    z-index: 9999;
+    box-shadow: 0 0 5px RGBA(0, 0, 0, .5);
+    @include li-reset;
+    @include screen('mobile') {
+      box-shadow: 0 0 0;
+      position: relative;
+      top:auto;
+      width: 100%;
+      padding: 0;
+      border-left: 5px solid $primaryColor;
+      background: #444;
+    }
+    li {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0 !important;
+      @include screen('mobile') {
+        border-top: 1px solid #555;
+      }
+      a {
+        display: block !important;
+        color: #fff !important;
+        padding: .5em .5em .5em 1em !important;
+        transition: .3s ease-out;
+        @include screen('mobile') {
+          padding: .5em 1em;
+        }
+
+        &:hover, &:focus {
+          background: $primaryColor;
+          box-shadow: 0 0 0 0;
+        }
+      }
+    }
+  }
 }

@@ -5,6 +5,7 @@ html{
     scroll-behavior: smooth;
 }
 body {
+    background: #dedede;
     &.noscroll {
         position: static !important;
         width: 100%;

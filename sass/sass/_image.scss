@@ -11,9 +11,9 @@ img {
         visibility: hidden;
         opacity: 0;
     }
-    &.lazy{
-        visibility: hidden;
-    }
+    // &.lazy{
+    //     visibility: hidden;
+    // }
     &.loaded {
         visibility: visible;
         animation: lazy_animation .5s ease-out;
