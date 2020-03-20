@@ -1,44 +1,68 @@
 .category {
-    @extend %clearfix;
-    text-align: left;
-    margin: 1em auto;
-    ul {
-        @include li-reset;
-        li {
-            margin: 0px 3px 3px 0px;
-            display: block;
-            float: left;
-        }
+  // @include make-xs-column(12);
+  // @include make-sm-column(3);
+  // @include make-md-column(3);
+  // @include make-lg-column(3);
+  // @extend %clearfix;
+  flex-basis: 200px;
+  flex-grow:0;
+  flex-shrink: 0;
+  text-align: left;
+  // margin: 1em 1em 1em 0;
+  margin-right: 30px;
+  margin-top: 15px;
+  @include screen('mobile') {
+    flex-basis: 100%;
+    padding-right: 0;
+    margin-top: 0;
+  }
+  ul {
+    @include li-reset;
+    li {
+      margin: 0px 5px 10px 0px;
+      display: block;
+      @include screen('mobile') {
+        display: inline-block;
+      }
     }
-    a {
-        @include gradient(#FFF, #DDD, vertical);
-        border: 1px solid #CCC;
-        padding: .4em 1em;
-        display: block;
-        color: #333;
-        @include box-sizing();
-        border-radius:4px;
-        &:hover,
-        &:focus {
-            color: #FFF;
-            @include gradient(darken($primaryColor, 0), darken($primaryColor, 15), vertical);
-            border: 1px solid darken($primaryColor, 15);
-            box-shadow: none;
-        }
-        &.active {
-            color: #FFF;
-            @include gradient(darken($primaryColor, 0), darken($primaryColor, 15), vertical);
-        }
-        span {
-            font-size: .813em;
-            &:before {
-                content: "(";
-                display: inline-block;
-            }
-            &:after {
-                content: ")";
-                display: inline-block;
-            }
-        }
+  }
+  a {
+    width: 100%;
+    background: #e5e5e5;
+    padding: 18px;
+    display: block;
+    color: #333;
+    font-weight: bold;
+    @include box-sizing();
+    border-radius:3px;
+    @include screen('mobile') {
+      padding: 8px 12px;
+      display: inline-block;
+      width: auto;
+      white-space: nowrap;
+      background: $primaryColor;
+      color: #fff;
     }
+    &:hover,
+    &:focus {
+      color: #FFF;
+      background: $secondaryColor;
+      box-shadow: none;
+    }
+    &.active {
+      color: #FFF;
+      background: $secondaryColor;
+    }
+    span {
+      font-size: .813em;
+      &:before {
+        content: "(";
+        display: inline-block;
+      }
+      &:after {
+        content: ")";
+        display: inline-block;
+      }
+    }
+  }
 }

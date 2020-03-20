@@ -12,18 +12,19 @@ $btn-radius:.2em;
 // 按鈕的共用設定
 @mixin btn_setting($btn-bg:#f5f5f5, $btn-font-color:$btn-font-color) {
     background-color: $btn-bg;
-    border: 1px solid darken($btn-bg, 15);
+    // border: 1px solid darken($btn-bg, 15);
     color: $btn-font-color;
     text-shadow:1px 1px 1px RGBA(0,0,0,.3);
     @include border-radius($btn-radius);
-    @include gradient(lighten($btn-bg, 5), darken($btn-bg, 15), vertical);
+    border:0;
+    // @include gradient(lighten($btn-bg, 5), darken($btn-bg, 15), vertical);
     &:hover, &:focus {
         background-color: darken($btn-bg, 10); // Old browsers
         border: 1px solid darken($btn-bg, 20) !important;
         cursor: pointer;
         color: #FFF;
         outline:none;
-        @include gradient(lighten($btn-bg, 10), darken($btn-bg, 18), vertical);
+        // @include gradient(lighten($btn-bg, 10), darken($btn-bg, 18), vertical);
     }
     &.active {
         background: lighten($btn-bg, 5);
