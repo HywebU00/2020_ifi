@@ -73,9 +73,9 @@
   }
   h1.logo {
     float: left;
-    width: 220px;
-    height: 76px;
-    margin-top: 33px;
+    width: 335px;
+    height: 70px;
+    margin-top: 39px;
     margin-left: 70px;
     padding: 0;
     @include box-sizing;
@@ -84,8 +84,8 @@
     }
     img {
       display: block;
-      max-width: 220px;
-      max-height: 76px;
+      max-width: 335px;
+      max-height: 70px;
     }
     @include screen('mobile') {
       padding: 2px 60px;
@@ -133,8 +133,8 @@
 }
 //search
 .search {
-  min-width: 40%;
-  max-width: 40%;
+  min-width: 30%;
+  max-width: 30%;
   margin-top: 40px;
   overflow: hidden;
   position: absolute;
