@@ -2,7 +2,7 @@
 // 文章標題
 h1.title, h2.title {
   line-height: 1.25em;
-  margin: 1em 0;
+  margin: 1em 0 .5em 0;
   &.none{
     visibility: hidden;
   }

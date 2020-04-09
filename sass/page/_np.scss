@@ -7,12 +7,13 @@
     flex-wrap:wrap;
   }
   .np__list{
-    @include screen('mobile') {
-      width: 100%;
-    }
+    width: 100%;
+    // @include screen('mobile') {
+    //   width: 100%;
+    // }
     ul,ol {
       overflow:hidden;
-      padding:1em 0;
+      padding:0;
       margin: 0;
       overflow:hidden;
     }

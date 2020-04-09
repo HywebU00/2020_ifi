@@ -27,9 +27,11 @@
     }
   }
   .list {
+    width: 100%;
     &>ul, ol {
       list-style-type: none;
       padding: 0;
+      margin-top: 0;
       border-top: 5px solid #434242;
       &>li {
         padding: 25px 0;
@@ -112,7 +114,7 @@
   }
 }
 .lp__album,.lp__album_video{
-  margin-top: 15px;
+  // margin-top: 15px;
   ul {
     @include li-reset;
     display: flex;
@@ -199,7 +201,7 @@
               &:before{
                 content: "";
                 width: 100%;
-                height: 2px;
+                height: 3px;
                 display: block;
                 background: $secondaryColor;
                 margin-top: 6px;
@@ -220,35 +222,35 @@
 }
 .lp__album_video{
   ul li a{
-    .img-container .play{
-      width: 50px;
-      height: 50px;
-      display: block;
-      border-radius: 5px;
-      background: $secondaryColor;
-      position: absolute;
-      left:50%;
-      top: 50%;
-      margin-left: -25px;
-      margin-top: -25px;
-      z-index: 9;
-      box-shadow: 0 0 4px rgba(0,0,0,.8);
-      &:before{
-        content: "";
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 10px 0 10px 16px;
-        border-color: transparent transparent transparent #fff;
-        position: absolute;
-        left: 20px;
-        top: 13px;
-      }
-    }
-    &:hover{
-      .img-container .play{
-        background: #222;
-      }
-    }
+    // .img-container .play{
+    //   width: 50px;
+    //   height: 50px;
+    //   display: block;
+    //   border-radius: 5px;
+    //   background: $secondaryColor;
+    //   position: absolute;
+    //   left:50%;
+    //   top: 50%;
+    //   margin-left: -25px;
+    //   margin-top: -25px;
+    //   z-index: 9;
+    //   box-shadow: 0 0 4px rgba(0,0,0,.8);
+    //   &:before{
+    //     content: "";
+    //     width: 0;
+    //     height: 0;
+    //     border-style: solid;
+    //     border-width: 10px 0 10px 16px;
+    //     border-color: transparent transparent transparent #fff;
+    //     position: absolute;
+    //     left: 20px;
+    //     top: 13px;
+    //   }
+    // }
+    // &:hover{
+    //   .img-container .play{
+    //     background: #222;
+    //   }
+    // }
   }
 }

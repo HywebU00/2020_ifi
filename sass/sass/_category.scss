@@ -1,37 +1,20 @@
 .category {
-  // @include make-xs-column(12);
-  // @include make-sm-column(3);
-  // @include make-md-column(3);
-  // @include make-lg-column(3);
-  // @extend %clearfix;
-  flex-basis: 200px;
-  flex-grow:0;
-  flex-shrink: 0;
+  @extend %clearfix;
   text-align: left;
-  // margin: 1em 1em 1em 0;
-  margin-right: 30px;
-  margin-top: 15px;
-  @include screen('mobile') {
-    flex-basis: 100%;
-    padding-right: 0;
-    margin-top: 0;
-  }
+  margin: 1em auto;
   ul {
     @include li-reset;
     li {
-      margin: 0px 5px 10px 0px;
+      margin: 0px 10px 10px 0px;
       display: block;
-      @include screen('mobile') {
-        display: inline-block;
-      }
+      float: left;
     }
   }
   a {
-    width: 100%;
-    background: #e5e5e5;
-    padding: 18px;
+    background: #444;
+    padding: .6em 1.2em;
     display: block;
-    color: #333;
+    color: #fff;
     font-weight: bold;
     @include box-sizing();
     border-radius:3px;
@@ -52,6 +35,76 @@
     &.active {
       color: #FFF;
       background: $secondaryColor;
+    }
+    span {
+      font-size: .813em;
+      &:before {
+        content: "(";
+        display: inline-block;
+      }
+      &:after {
+        content: ")";
+        display: inline-block;
+      }
+    }
+  }
+}
+.submenu {
+  flex-basis: 220px;
+  flex-grow:0;
+  flex-shrink: 0;
+  text-align: left;
+  margin-right: 30px;
+  background: #e5e5e5;
+  border-radius:5px;
+  padding: 10px;
+  @include screen('mobile') {
+    flex-basis: 100%;
+    padding-right: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
+    background: #222;
+    padding: 15px 15px 5px 15px;
+  }
+  ul {
+    @include li-reset;
+    li {
+      margin: 0 0 10px 0;
+      display: block;
+      @include screen('mobile') {
+        display: inline-block;
+        margin: 0px 10px 10px 0px;
+      }
+    }
+  }
+  a {
+    width: 100%;
+    padding: 10px;
+    display: block;
+    color: #222;
+    font-weight: bold;
+    border-radius:3px;
+    @include box-sizing();
+    @include screen('mobile') {
+      padding: 8px 12px;
+      display: inline-block;
+      width: auto;
+      white-space: nowrap;
+      background: #ccc;
+      color: #222;
+    }
+    &:hover,
+    &:focus {
+      color: #FFF;
+      background: $secondaryColor;
+      box-shadow: none;
+    }
+    &.active {
+      color: #FFF;
+      background: $secondaryColor;
+      &:hover{
+        background: #222;
+      }
     }
     span {
       font-size: .813em;
