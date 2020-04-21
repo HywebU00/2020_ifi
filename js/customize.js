@@ -13,6 +13,44 @@ $(function() {
         lazyLoad: 'ondemand',
         ease: 'ease'
     });
+    $('.hotTopic ul').slick({
+        dots: false,
+        arrow: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 1500,
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        focusOnSelect: true,
+        accessibility: true,
+        lazyLoad: 'ondemand',
+        ease: 'ease',
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: true
+            }
+        }, {
+            breakpoint: 545,
+            settings: {
+                arrows: true,
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }, {
+            breakpoint: 480,
+            settings: {
+                arrows: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }]
+    });
     $('.event ul').slick({
         mobileFirst: true,
         dots: false,
