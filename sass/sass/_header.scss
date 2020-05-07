@@ -73,9 +73,9 @@
   }
   h1.logo {
     float: left;
-    width: 335px;
-    height: 70px;
-    margin-top: 39px;
+    width: 200px;
+    height: 80px;
+    margin-top: 35px;
     margin-left: 70px;
     padding: 0;
     @include box-sizing;
@@ -84,8 +84,8 @@
     }
     img {
       display: block;
-      max-width: 335px;
-      max-height: 70px;
+      max-width: 200px;
+      max-height: 80px;
     }
     @include screen('mobile') {
       padding: 2px 60px;
