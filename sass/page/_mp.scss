@@ -381,7 +381,7 @@
             background: $lightColor;
           }
           .featured__title{
-            color: $lightColor;
+            color: #e97504;
           }
           .featured__more{
             background: $lightColor;
@@ -540,17 +540,24 @@
           border-radius: 3px;
           color: #fff;
           display: inline-block;
-          &.classify_education{
-            background: #24a37b;
+          &.classify_information{
+            background: #1a8293;
           }
           &.classify_counselling{
-            background: #9246ab;
+            background: #4d8433;
           }
           &.classify_employment{
-            background: #2997b5;
+            background: #ee9803;
+            color: #000;
+          }
+          &.classify_education{
+            background: #9246ab;
           }
           &.classify_healthwelfare{
-            background: #ee9803;
+            background: #0f8761;
+          }
+          &.classify_about{
+            background: #df3148;
           }
           &:hover,&:focus{
             background:#333;
@@ -674,7 +681,7 @@
         bottom: 30px;
         padding: 4px 10px;
         z-index: 2;
-        color: #fff;
+        color: #000;
         background: $lightColor;
         text-align: center;
         font-size: 0.9375em;
@@ -692,6 +699,7 @@
       }
       &:nth-child(2){
         .hotArticle__banner__title{
+          color: #fff;
           background: $secondaryColor;
         }
       }
