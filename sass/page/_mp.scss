@@ -986,4 +986,19 @@
       }
     }
   }
+  .welfare__more{
+    margin-top: 30px;
+    text-align: center;
+    a{
+      color: #cd2631;
+      padding: 8px 20px;
+      display: inline-block;
+      border: 1px solid #cd2631;
+      &:hover,&:focus{
+        background: #cd2631;
+        color: #fff;
+        box-shadow: 0 0 0 0;
+      }
+    }
+  }
 }
