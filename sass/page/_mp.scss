@@ -163,9 +163,6 @@
       margin: 0 1%;
       @include screen('mobile') {
         width: 48%;
-        &:last-child{
-          width: 100%;
-        }
       }
       a{
         display: block;
