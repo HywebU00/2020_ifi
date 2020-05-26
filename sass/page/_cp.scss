@@ -82,6 +82,17 @@ h1.title, h2.title {
     @include aSetting;
   }
 }
+.source_page{
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  a{
+    background: $secondaryColor;
+    color: #fff;
+    padding: 12px 50px;
+    font-size: 1em;
+  }
+}
 // 文章標籤
 div.tag {
   @extend %clearfix;
