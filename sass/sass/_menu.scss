@@ -18,11 +18,12 @@
       vertical-align: top;
       >a {
         display: block;
-        padding: 0 1.8em;
+        padding: 0 1em;
         min-height: 2.5em;
         line-height: 2.5em;
         font-weight: bold;
         color: #222;
+        font-size: 1.25em;
         @media screen and (max-width:1070px){
           padding: 0 1.5em;
         }
