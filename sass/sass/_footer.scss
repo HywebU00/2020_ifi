@@ -5,7 +5,7 @@ footer {
   .container {
     @include box-sizing(border-box);
     height: 390px;
-    padding: 38px 88px 82px 88px;
+    padding: 38px 60px 82px 60px;
     background: #242f39 url(../images/footer_bg.png) no-repeat right bottom;
     position: relative;
     @include screen('mobile') {
