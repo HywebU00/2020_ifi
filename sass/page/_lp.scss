@@ -218,6 +218,9 @@
 }
 .lp__album,.lp__album_video{
   // margin-top: 15px;
+  display: block;
+  width: 100%;
+  clear: both;
   ul {
     @include li-reset;
     display: flex;
