@@ -1,3 +1,105 @@
+.advanced_search_block{
+  display: block;
+  clear: both;
+  margin:-55px 0 10px 0;
+  overflow: hidden;
+  @include screen('mobile') {
+    margin:0 0 10px 0;
+  }
+  .search_btn{
+    display: block;
+    clear: both;
+    position: relative;
+    float: left;
+    @include screen('mobile') {
+      width: 100%;
+      position: relative;
+      bottom:auto;
+      right: auto;
+      margin: 0;
+      float: none;
+      display: block;
+    }
+    a{
+
+      display: block;
+      padding: .4em 1.5em .4em 2.5em;
+      background: $secondaryColor url(../images/basic/icon_search_.png) no-repeat 15px center;
+      background-size: 18px;
+      border: 0;
+      color: #FFF;
+      border-radius: 3px;
+      &:hover,&:focus{
+        background: $primaryColor url(../images/basic/icon_search_.png) no-repeat 15px center;
+        background-size: 18px;
+        box-shadow: none;
+      }
+    }
+  }
+  .advanced_search{
+    background: #e5e5e5;
+    padding: .8em;
+    box-sizing: border-box;
+    clear: both;
+    position: relative;
+    display: block;
+    margin-top: 50px;
+    border-radius: 3px;
+    @include screen('mobile') {
+      margin-top: 10px;
+    }
+    .form_grid{
+      margin: 0;
+      display: flex;
+      flex-wrap:wrap;
+      @include screen('mobile') {
+        display: block;
+      }
+    }
+    .form_grp{
+      border-bottom: 0;
+      width: 50%;
+      display: flex;
+      @include screen('mobile') {
+        width: 100%;
+      }
+      .form_title{
+        width: auto;
+        white-space: nowrap;
+        @include screen('mobile') {
+          padding-left: 0;
+        }
+      }
+      .form_content{
+        width: auto;
+        flex-grow: 1;
+        display: flex;
+        @include screen('mobile') {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+      // @include make-xs-column(12);
+      // @include make-sm-column(6);
+      // @include make-md-column(6);
+      // @include make-lg-column(6);
+      // @include screen('mobile') {
+      //   padding: 0;
+      //   .form_title,.form_content{
+      //     padding: 0;
+      //   }
+      // }
+    }
+    .btn_grp{
+      padding: 0;
+      clear: both;
+      width: 100%;
+      @include screen('mobile') {
+        text-align: left;
+      }
+    }
+  }
+}
 .lp {
   display: flex;
   justify-content:space-between;
@@ -5,6 +107,7 @@
   @include screen('mobile') {
     flex-wrap:wrap;
   }
+
   table {
     td {
       a {

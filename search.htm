@@ -10,9 +10,6 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
   <![endif]-->
-  <!-- slick css-->
-  <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
-  <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css" />
   <!-- hyUI css -->
   <link rel="stylesheet" href="css/ifi.css">
   <!-- favicon -->
@@ -318,7 +315,7 @@
         </div>
         <!-- h2節點 -->
         <h2 class="title">進階搜尋</h2>
-        
+
         <!-- function功能區塊 -->
         <div class="function">
           <ul>
@@ -326,6 +323,34 @@
             <li class="print"><a href="#">友善列印</a></li>
             <li class="forward"><a href="#">轉寄友人</a></li>
           </ul>
+        </div>
+        <!-- 進階搜尋 -->
+        <div class="advanced_search_block">
+          <div class="search_btn">
+            <a href="">查詢</a>
+          </div> 
+          <div class="advanced_search" style="">
+            <form action="" class="form_grid">
+              <div class="form_grp">
+                <label for="" class="form_title">標題</label>
+                <div class="form_content">
+                  <input type="text" id="" value="" placeholder="請輸入書狀名稱關鍵字">
+                </div>
+              </div>
+              <div class="form_grp">
+                <label for="" class="form_title">張貼日</label>
+                <div class="form_content">
+                  <input type="date" class="calendar" />
+                  <label for="" class="form_title">～</label>
+                  <input type="date" class="calendar" />
+                </div>
+              </div>
+              <div class="btn_grp">
+                <input name="" type="submit" value="查詢">
+                <input name="" type="reset" value="清除">
+              </div>
+            </form>
+          </div>
         </div>
         <!-- LP Start -->
         <section class="lp">
@@ -405,7 +430,10 @@
         <!-- Pagination -->
         <div class="pagination">
           <form action="" class="form_inline">
-            <div class="total"> 第<span>1/18</span>頁，共<span>308</span>筆資料
+            <div class="total">共<span>379</span>筆資料，第<span>1/19</span>頁，每頁顯示 
+              <a href="lp-1303-1-1-20.html" title="20">20</a>
+              <a href="lp-1303-1-1-40.html" title="40" class="active">40</a>
+              <a href="lp-1303-1-1-60.html" title="60">60</a>筆。
             </div>
           </form>
           <ul class="page">
@@ -421,12 +449,8 @@
             <li><a href="#">8</a></li>
             <li><a href="#">9</a></li>
             <li><a href="#">10</a></li>
-            <li class="next">
-              <a href="#" title="下一頁">下一頁 </a>
-            </li>
-            <li class="last">
-              <a href="#" title="最後一頁">最後一頁 </a>
-            </li>
+            <li class="next"><a href="#" title="下一頁">下一頁 </a></li>
+            <li class="last"><a href="#" title="最後一頁">最後一頁 </a></li>
           </ul>
         </div>
       </div>
@@ -472,7 +496,7 @@
               <ul>
                 <li><a href="#">醫療保健</a></li>
                 <li><a href="#">社會福利</a></li>
-                
+
                 <li><a href="#">傳染病防治</a></li>
                 <li><a href="#">人身安全維護</a></li><li><a href="#">防制人口販運</a></li>               
               </ul>
