@@ -153,20 +153,20 @@ $(window).on("load resize scroll", function(e) {
         }
     });
 });
-$(".wrapper_en .header .menu .menu_open").click(function(event) {
-    $(this).next("ul").toggleClass('open');
-});
-$(".wrapper_en .header .menu li a").focus(function(event) {
-    $(".wrapper_en .header .menu ul").addClass('open');
-});
-$(".wrapper_en .header .menu li:last-child a").focusout(function(event) {
-    $(".wrapper_en .header .menu ul").removeClass('open');
-});
-$(function(){
-    $(".advanced_search_block .advanced_search").hide();
-    $(".advanced_search_block .search_btn").click(function(e) {
-        $(".advanced_search_block .advanced_search").slideToggle();
-        e.preventDefault();
-    });
-});
+// $(".wrapper_en .header .menu .menu_open").click(function(event) {
+//     $(this).next("ul").toggleClass('open');
+// });
+// $(".wrapper_en .header .menu li a").focus(function(event) {
+//     $(".wrapper_en .header .menu ul").addClass('open');
+// });
+// $(".wrapper_en .header .menu li:last-child a").focusout(function(event) {
+//     $(".wrapper_en .header .menu ul").removeClass('open');
+// });
+// $(function(){
+//     $(".advanced_search_block .advanced_search").hide();
+//     $(".advanced_search_block .search_btn").click(function(e) {
+//         $(".advanced_search_block .advanced_search").slideToggle();
+//         e.preventDefault();
+//     });
+// });
 
