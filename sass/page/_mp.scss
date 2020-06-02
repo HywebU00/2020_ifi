@@ -447,7 +447,7 @@
   }
 }
 .infographic{
-  padding: 85px;
+  padding: 85px 85px 55px 85px;
   // background: #f5f2f1;
   position: relative;
   @include screen('mobile') {
@@ -1033,7 +1033,7 @@
   }
 }
 .welfare{
-  padding: 0 85px 60px 85px;
+  padding: 30px 85px 60px 85px;
   @include screen('mobile') {
     padding: 20px 15px;
   }
