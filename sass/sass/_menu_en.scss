@@ -56,15 +56,15 @@
           }
         }
       }
-      &:nth-child(n+4){
-        display: none;
-      }
+      // &:nth-child(n+4){
+      //   display: none;
+      // }
     }
-    &.open{
-      li:nth-child(n+4){
-        display: inline-block;
-      }
-    }
+    // &.open{
+    //   li:nth-child(n+4){
+    //     display: inline-block;
+    //   }
+    // }
   }
 
 }
