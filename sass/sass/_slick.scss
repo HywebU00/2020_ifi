@@ -91,7 +91,7 @@
 }
 //  slick燈箱
 .lightbox_slider {
-  padding: 1em 0 2em 0;
+  padding: 1em 0 3em 0;
   h3 {
     font-size: 1.25em;
     padding: 8px 0px 8px 0px;
@@ -108,7 +108,6 @@
     }
   }
   background: #fff;
-  padding: 1em 0;
   clear: both;
   .cp_slider {
     @include gutter;
