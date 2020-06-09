@@ -58,14 +58,22 @@
     }
     .form_grp{
       border-bottom: 0;
-      width: 50%;
+      width: 62%;
       display: flex;
       @include screen('mobile') {
         width: 100%;
       }
+      &:first-of-type{
+        width: 38%;
+        @include screen('mobile') {
+          width: 100%;
+        }
+      }
       .form_title{
         width: auto;
         white-space: nowrap;
+        vertical-align: middle;
+        line-height: 2em;
         @include screen('mobile') {
           padding-left: 0;
         }
@@ -77,8 +85,23 @@
         @include screen('mobile') {
           padding-right: 0;
           padding-left: 0;
+          display: block;
         }
-      }
+        .calendar{
+          width: 28%;
+          @include screen('mobile') {
+            width: 100%;
+          }
+        }
+        .date{
+          margin-left: 10px;
+          font-size: .875em;
+          line-height: 2em;
+          @include screen('mobile') {
+           margin-left: 0;
+         }
+       }
+     }
       // @include make-xs-column(12);
       // @include make-sm-column(6);
       // @include make-md-column(6);
