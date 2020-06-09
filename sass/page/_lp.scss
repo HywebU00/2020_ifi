@@ -185,7 +185,7 @@
 
         }
         time{
-          color: #777;
+          color: #757575;
           font-size: 0.875em;
         }
         // .list__more{
@@ -258,13 +258,13 @@
             @include box-sizing;
             .album__date{
               font-size: .875em;
-              color: #848484;
+              color: #757575;
               margin-bottom: 4px;
               display: inline-block;
             }
             .album__dep{
               font-size: .875em;
-              color: #848484;
+              color: #757575;
               margin-bottom: 4px;
               display: inline-block;
               &:before{

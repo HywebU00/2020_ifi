@@ -155,15 +155,15 @@
       padding: .5em 35px .5em .5em;
       box-shadow: none;
       &[type="text"] {
-        border:1px solid #fff;
+        border:2px solid #fff;
         border-bottom: 1px solid #888;
         border-radius: 0;
         box-shadow: 0 0 0 0;
         &:focus {
-          border: 1px solid $aHover;
+          border: 2px solid $aHover;
           box-shadow: 0 0 0 0;
           outline: none;
-          border-bottom: 1px solid $primaryColor;
+          // border-bottom: 1px solid $primaryColor;
         }
       }
       &[type="submit"] {
@@ -220,11 +220,12 @@
         float: left;
       }
       li {
-        margin: 0 .6em 0 0;
+        margin: 0 4px 0 0;
         padding: 0;
         display: inline-block;
       }
       a {
+        padding: 4px 8px;
         @include aSetting_nocolor;
       }
     }

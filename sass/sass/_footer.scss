@@ -2,6 +2,9 @@ footer {
   @include clearfix;
   text-align: left;
   font-size: 0.875em; 
+  .accesskey{
+    color: #ccc;
+  }
   .container {
     @include box-sizing(border-box);
     height: 390px;
@@ -50,7 +53,7 @@ footer {
         a {
           display: block;
           padding: .3em 1em .2em 1em;
-          color: $primaryColor2;
+          color: #15ABB3;
           @include transition(all, .3s, ease-out);
           @include screen('mobile') {
             background: $primaryColor2;

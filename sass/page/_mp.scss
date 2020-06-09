@@ -103,6 +103,7 @@
   .slick-prev {
     background: url(../images/arrow_left.png) center center no-repeat #fff;
     background-size: 60px 60px;
+    color: $secondaryColor;
     @include screen('mobile') {
       top: 35%;
       left: 2%;
@@ -115,6 +116,7 @@
   .slick-next {
     background: url(../images/arrow_right.png) center center no-repeat #fff;
     background-size: 60px 60px;
+    color: $secondaryColor;
     @include screen('mobile') {
       top: 35%;
       right: 2%;
@@ -701,7 +703,7 @@
             background: #0f8761;
           }
           &.classify_fund{
-            background: #df3148;
+            background: $secondaryColor;
           }
           &:hover,&:focus{
             background:#333;
@@ -713,7 +715,7 @@
 
       .news__source{
         font-size: 0.875em;
-        color: #848484;
+        color: #757575;
         .news__date{
           margin-left: 10px;
           &:before{
@@ -791,7 +793,7 @@
       }
       .hotArticle__date{
         font-size: 0.875em;
-        color: #848484;
+        color: #757575;
       }
     }
   }
@@ -1065,6 +1067,9 @@
         }
         &.yellow{
           background: $lightColor;
+          .welfare__title{
+            color: #000;
+          }
         }
         &.blue{
           background: $primaryColor;
@@ -1119,6 +1124,7 @@
           .welfare__title{
             background: rgba(0,0,0,0.5);
             border-radius: 3px;
+            color: #fff;
           }
           .welfare__pic img{
             transform:scale(1.1); 

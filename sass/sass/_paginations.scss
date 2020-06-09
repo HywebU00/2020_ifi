@@ -6,7 +6,7 @@
   font-size: .938em;
     @extend %clearfix; // outline: 1px solid red;
     span {
-      color: $primaryColor;
+      color: #178388;
       margin: 0px .5em;
     }
     .page {
@@ -121,7 +121,7 @@
         padding: 1px 4px;
         margin: 0;
         display: inline-block;
-        color: $primaryColor;
+        color: #178388;
         &:first-child{
           margin-left: 5px;
         }
@@ -130,18 +130,18 @@
         }
 
         &:hover{
-          color: $primaryColor;
+          color: #178388;
           text-decoration: underline;
         }
         &:focus{
-          background: $primaryColor;
+          background: #178388;
           color: #fff;
           border-radius: 2px;
           box-shadow: 0 0 0 0 transparent inset;
           text-decoration: none;
         }
         &.active{
-          background: $primaryColor;
+          background: #178388;
           color: #fff;
           border-radius: 2px;
           &:hover,&:focus{
