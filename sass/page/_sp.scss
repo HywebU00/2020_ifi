@@ -288,3 +288,14 @@
     }
   }
 }
+.inves{
+  padding: 20px 0;
+  label{
+    @include screen('mobile') {
+      display: inline-block;
+    }
+  }
+  input{
+    margin-left: 15px;
+  }
+}

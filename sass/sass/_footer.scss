@@ -12,7 +12,7 @@ footer {
     background: #242f39 url(../images/footer_bg.png) no-repeat right bottom;
     position: relative;
     @include screen('mobile') {
-      padding: 20px 15px;
+      padding: 20px 15px 120px 15px;
       height: auto;
       background-size: contain; 
     }
@@ -104,12 +104,16 @@ footer {
       clear: both;
       padding: 10px 0;
       text-align: center;
+      text-align: left;
     }
     a {
       display: inline-block;
       vertical-align: top;
       position:relative;
       margin: 0 5px;
+      @include screen('mobile') {
+        margin: 0 5px 0 0;
+      }
       &:focus {
         &:after {
           content: "";
@@ -136,10 +140,7 @@ footer {
     width: 85%;
     letter-spacing: .05em;
     @include screen('mobile') {
-      position: relative;
-      width: 100%;
-      clear: both;
-      margin-top: 10px;
+      bottom: 25px;
     }
   }
 }
