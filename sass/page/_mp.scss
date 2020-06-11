@@ -487,14 +487,14 @@
     }
     li.topic{
       width: 30%;
-      height: 240px;
+      // height: 240px;
       @include screen('mobile') {
         width: 100%;
         min-height:auto;
         margin-bottom: 15px;
       }
       &.img-container{
-        @include aspect-ratio(280,240);
+        @include aspect-ratio(800,890);
       }
       a{
         text-align: center;
@@ -508,6 +508,10 @@
         &:hover,&:focus{
           background: $secondaryColor;
           box-shadow: 0 0 0 0;
+        }
+        img{
+          height: 100%;
+          width: auto;
         }
         &:after {
           content: "";
