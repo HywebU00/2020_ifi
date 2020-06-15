@@ -43,6 +43,9 @@
             color: #fff !important;
             background: $secondaryColor;
             // border: darken($form-focus, 5) solid 1px;
+            &:hover,&:focus{
+              background: $primaryColor;
+            }
           }
         }
         %arrow {
