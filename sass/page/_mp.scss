@@ -709,6 +709,9 @@
           &.classify_fund{
             background: $secondaryColor;
           }
+          &.classify_video{
+            background: #A20055;
+          }
           &:hover,&:focus{
             background:#333;
             box-shadow:0 0 0 0;
@@ -806,7 +809,7 @@
     @include li-reset;
     li{
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       a{
         display: block;
         &:hover,&:focus{
