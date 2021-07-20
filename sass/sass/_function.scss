@@ -12,24 +12,25 @@ $function_color:#e5e5e5;
 div.function {
   @include box-sizing;
   @extend %clearfix;
-  margin: 0 0 .5em 0;
+  margin: 0;
   text-align: right;
+  float: left;  
   @include screen('mobile') {
     // margin: 0 0 .5em 0;
     text-align: left;
   }
   ul {
     @include li-reset;
-    display: inline-block;
     li {
       display: block;
       float: left;
-      margin: 0 0 5px 5px;
+      margin: 0 0 0 5px;
       button,
       a {
         display: block;
-        padding: .4em 1em;
+        padding: 0 1em;
         background: $function_color;
+        line-height: 40px;
         // border-color: $function_color;
         border:0;
         color: #FFF;
@@ -94,7 +95,8 @@ div.function {
       }
     }
   }
-  .function {
+  @include screen('mobile') {
+   .function {
     height: 40px;
     margin: 0;
     ul {
@@ -154,7 +156,15 @@ div.function {
             background-size: 100%;
           }
         }
+        &.calendar {
+          a:before {
+            background: url(../images/basic/icon_calendar.png) no-repeat center center;
+            background-size: 100%;
+          }
+        }
       }
     }
   }
+}
+
 }
