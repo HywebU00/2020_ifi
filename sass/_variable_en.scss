@@ -3,8 +3,8 @@
 
 //-------------------------------------------------------------顏色---------//
 // 定義顏色 此顏色可自由變換
-$primaryColor: #269297; //主色
-$primaryColor2:#0ba1a9;
+$primaryColor: #208287; //主色
+$primaryColor2: #0ba1a9;
 $secondaryColor: #de2d33; //輔色
 $lightColor: #ee9803; //點綴
 $linkColor: #21baff; //連結
@@ -16,7 +16,7 @@ $color-orange: #f77810;
 $color-red: #ff3e4d;
 $color-yellow: #fcc211;
 $color-purple: #aa5ac5;
-$color-gray: #ccc;
+$color-gray: #666;
 $color-dark: #333333;
 $color-hr: #666; //hr顏色
 $color-word: #222; //一般字的顏色
@@ -25,13 +25,13 @@ $aColor: #269297;
 $aHover: lighten($aColor, 10);
 
 // 表單focus顏色
-$form-focus: #269297; //表單
-$form-btn: #269297; //表單
+$form-focus: #208287; //表單
+$form-btn: #208287; //表單
 //-------------------------------------------------------------字型--------//
 
 // 字型設定
-$font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體,
-Arial, sans-serif;
+$font-family: Lato, "PingFang TC", "Helvetica Neue", Helvetica, 微軟正黑體,
+  Arial, sans-serif;
 
 $font-size: 1em;
 

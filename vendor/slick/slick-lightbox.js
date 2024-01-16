@@ -43,26 +43,26 @@
             return this.open();
         };
         SlickLightbox.prototype.createModalItems = function() {
-            /* Creates individual slides to be used with slick. If `options.images` array is specified, it uses it's contents, otherwise loops through elements' `options.itemSelector`. */
             var $items, createItem, links;
-            if (this.options.images) {
-                links = $.map(this.options.images, function(img) {
-                    return '<div class="slick-lightbox-slick-item"><div class="slick-lightbox-slick-item-inner"><img class="slick-lightbox-slick-img" src="' + img + '" /></div></div>';
-                });
-            } else {
-                createItem = function(_this) {
-                    return function(el) {
-                        var caption, src;
-                        caption = _this.getElementCaption(el);
-                        src = _this.getElementSrc(el);
-                        return '<div class="slick-lightbox-slick-item"><div class="slick-lightbox-slick-item-inner"><img class="slick-lightbox-slick-img" src="' + src + '" />' + caption + '</div></div>';
-                    };
-                }(this);
-                $items = this.filterOutSlickClones(this.$element.find(this.options.itemSelector));
-                links = $.map($items, createItem);
-            }
-            return links;
-        };
+                    if (this.options.images) {
+                        links = $.map(this.options.images, function(img) {
+                            return '<div class="slick-lightbox-slick-item"><div class="slick-lightbox-slick-item-inner"><img class="slick-lightbox-slick-img" src=" ' + img + '" alt=""/></div></div>';
+                        });
+                    } else {
+                        createItem = function(_this) {
+                            return function(el) {
+                                var caption, src, alt;
+                                caption = _this.getElementCaption(el);
+                                src = _this.getElementSrc(el);
+                                alt = $(el).data(_this.options.caption);
+                                return '<div class="slick-lightbox-slick-item"><div class="slick-lightbox-slick-item-inner"><img class="slick-lightbox-slick-img" src="' + src + '" alt="' + alt+'" />' + caption + '</div></div>';
+                            };
+                        }(this);
+                        $items = this.filterOutSlickClones(this.$element.find(this.options.itemSelector));
+                        links = $.map($items, createItem);
+                    }
+                    return links;
+                };
         SlickLightbox.prototype.createModal = function() {
             /* Creates a `slick`-friendly modal. */
             var html, links;

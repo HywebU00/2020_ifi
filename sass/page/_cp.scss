@@ -1,12 +1,13 @@
 @charset "utf-8";
 // 文章標題
-h1.title, h2.title {
+h1.title,
+h2.title {
   line-height: 1.25em;
-  margin: 1em 0 .5em 0;
-  &.none{
+  margin: 1em 0 0.5em 0;
+  &.none {
     visibility: hidden;
   }
-  &:before{
+  &:before {
     content: "";
     width: 29px;
     height: 39px;
@@ -22,37 +23,37 @@ h1.title, h2.title {
     margin: 0px auto 1em auto;
     width: auto;
     max-width: 80%;
-    background: #F1F1F1;
+    background: #f1f1f1;
     overflow: hidden;
-    padding: .5em .5em .2em;
+    padding: 0.5em 0.5em 0.2em;
     img {
       float: none;
       width: 100%;
       margin: 0;
-      display:block;
+      display: block;
     }
     span {
       text-align: center;
       display: block;
-      font-size: .938em;
+      font-size: 0.938em;
     }
-    @include screen('mobile') {
+    @include screen("mobile") {
       float: none;
       max-width: 100%;
       width: auto;
       margin: 0px auto;
       display: block;
-      margin-bottom: .5em;
+      margin-bottom: 0.5em;
     }
   }
   &.small_size {
-    font-size: .938em;
+    font-size: 0.938em;
   }
   &.large_size {
     font-size: 1.125em;
   }
   table {
-    background: #FFF;
+    background: #fff;
   }
   img {
     &.float_left {
@@ -60,7 +61,7 @@ h1.title, h2.title {
       margin: 0px 1em 1em 0;
       width: auto;
       max-width: 55%;
-      @include screen('mobile') {
+      @include screen("mobile") {
         float: none;
         max-width: 100%;
         margin: 0px auto;
@@ -71,7 +72,7 @@ h1.title, h2.title {
       margin: 0px 0 1em 1em;
       width: auto;
       max-width: 55%;
-      @include screen('mobile') {
+      @include screen("mobile") {
         float: none;
         max-width: 100%;
         margin: 0px auto;
@@ -82,11 +83,11 @@ h1.title, h2.title {
     @include aSetting;
   }
 }
-.source_page{
+.source_page {
   text-align: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  a{
+  a {
     background: $secondaryColor;
     color: #fff;
     padding: 12px 50px;
@@ -96,18 +97,18 @@ h1.title, h2.title {
 // 文章標籤
 div.tag {
   @extend %clearfix;
-  padding: .5em 0 .5em 1.5em;
-  margin-bottom: .5em;
-  position:relative;
+  padding: 0.5em 0 0.5em 1.5em;
+  margin-bottom: 0.5em;
+  position: relative;
   &:before {
     display: block;
-    position:absolute;
-    top:.3em;
-    left: .1em;
+    position: absolute;
+    top: 0.3em;
+    left: 0.1em;
     content: "";
     width: 1em;
     height: 1em;
-    top: .9em;
+    top: 0.9em;
     background: url(../images/basic/icon_tag.png) no-repeat center center;
     background-size: 1em;
   }
@@ -116,16 +117,17 @@ div.tag {
     @include li-reset;
     li {
       display: inline-block;
-      margin: 0 .2em .2em 0;
+      margin: 0 0.2em 0.2em 0;
       a {
         display: block;
-        font-size: .813em;
+        font-size: 0.813em;
         @include aSetting_nocolor;
         border-radius: 4px;
-        border: 1px solid #DDD;
-        padding: .2em .5em;
-        &:hover,&:focus {
-          border:1px solid $aHover;
+        border: 1px solid #ddd;
+        padding: 0.2em 0.5em;
+        &:hover,
+        &:focus {
+          border: 1px solid $aHover;
         }
       }
     }
@@ -139,9 +141,9 @@ div.tag {
   h3 {
     font-size: 1.25em;
     padding: 8px 0px 8px 0px;
-    margin: .5em 0px .5em;
+    margin: 0.5em 0px 0.5em;
     border-bottom: 3px solid $primaryColor;
-    &:before{
+    &:before {
       content: "";
       width: 24px;
       height: 24px;
@@ -161,20 +163,20 @@ div.tag {
     position: relative;
     margin-bottom: 10px;
     padding-left: 1em;
-    border-bottom: 1px solid #EEE;
+    border-bottom: 1px solid #eee;
     clear: both;
     overflow: hidden;
-    padding-bottom: .5em;
+    padding-bottom: 0.5em;
     span {
-      @include screen('mobile') {
+      @include screen("mobile") {
         display: block;
-        margin-bottom: .2em;
+        margin-bottom: 0.2em;
       }
     }
     &:before {
       position: absolute;
-      top: .8em;
-      left: .2em;
+      top: 0.8em;
+      left: 0.2em;
       text-align: right;
       width: 30px;
       width: 6px;
@@ -182,199 +184,218 @@ div.tag {
       border-radius: 50%;
       background: #999;
       content: "";
-            // counter-increment: counter;
-            // content: counters(counter, ".") " . ";
-            // display:none;
-          }
-          .update,
-          .file_view {
-            font-size: .813em;
-            color: #AAA;
-            width: 120px;
-            padding-left: 35px;
-            float: none;
-            margin-top: 5px;
-            @media screen and (max-width: 767px) {
-              display: inline-block;
-              float: none;
-              width: auto;
-              margin-top: 0;
-            }
-            @include screen('xs_mobile') {
-              display: none;
-            }
-          }
-          .update {
-            width: 150px;
-            @media screen and (max-width: 767px) {
-              margin-left: 5px;
-            }
-          }
-          a {
-            padding: 0px;
-            position: relative;
-            height: auto;
-            line-height: 20px;
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0px .2em;
-            min-width: 32px;
-            text-align: center;
-            text-indent: -9999px;
-            height: 34px;
-            color: #757575;
-            @include text-overflow;
-            @include box-sizing;
-            margin-bottom: .1em;
-            @include screen('mobile') {
-              max-width: 2em;
-              margin: 0px auto .5em 0px;
-            }
-            &:hover, &:focus {
-              &:before {
-                content: "";
-                z-index: 99;
-                position: absolute;
-                border-radius: 4px;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                box-shadow: 0px 0px 0px 2px $aHover inset;
-              }
-            }
-            .kb {
-              font-size: .75em;
-              color: #666;
-              display: none;
-              margin: 0px .5em;
-            }
-            &:after {
-              content: "";
-              background: url(../images/basic/icon_file.png) no-repeat center center;
-              background-size: contain;
-              width: 26px;
-              height: 28px;
-              position: absolute;
-              top: 3px;
-              left: 3px;
-              text-align: right;
-            }
-            // word系列
-            &[href$="doc"],&.doc {
-              &:after {
-                background: url(../images/basic/icon_doc.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="docx"],&.docx {
-              &:after {
-                background: url(../images/basic/icon_docx.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="odt"],&.odt {
-              &:after {
-                background: url(../images/basic/icon_odt.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            // excel系列
-            &[href$="xls"],&.xls {
-              &:after {
-                background: url(../images/basic/icon_xls.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="csv"],&.csv {
-              &:after {
-                background: url(../images/basic/icon_csv.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="ods"],&.ods {
-              &:after {
-                background: url(../images/basic/icon_ods.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="xlsx"],&.xlsx {
-              &:after {
-                background: url(../images/basic/icon_xlsx.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            // pdf系列
-            &[href$="pdf"],&.pdf {
-              &:after {
-                background: url(../images/basic/icon_pdf.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="ppt"],&.ppt {
-              &:after {
-                background: url(../images/basic/icon_ppt.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="pptx"],&.pptx {
-              &:after {
-                background: url(../images/basic/icon_pptx.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="odp"],&.odp {
-              &:after {
-                background: url(../images/basic/icon_odp.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            // 其他格式
-            &[href$="zip"],&.zip {
-              &:after {
-                background: url(../images/basic/icon_zip.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="txt"],&.txt {
-              &:after {
-                background: url(../images/basic/icon_txt.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="mov"],&.mov {
-              &:after {
-                background: url(../images/basic/icon_mov.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="mp3"],&.mp3 {
-              &:after {
-                background: url(../images/basic/icon_mp3.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="jpg"],&.jpg {
-              &:after {
-                background: url(../images/basic/icon_jpg.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="wmv"],&.wmv {
-              &:after {
-                background: url(../images/basic/icon_wmv.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-            &[href$="mp4"],&.mp4 {
-              &:after {
-                background: url(../images/basic/icon_mp4.png) no-repeat center center;
-                background-size: contain;
-              }
-            }
-          }
+      // counter-increment: counter;
+      // content: counters(counter, ".") " . ";
+      // display:none;
+    }
+    .update,
+    .file_view {
+      font-size: 0.813em;
+      color: #666;
+      width: 120px;
+      padding-left: 35px;
+      float: none;
+      margin-top: 5px;
+      @media screen and (max-width: 767px) {
+        display: inline-block;
+        float: none;
+        width: auto;
+        margin-top: 0;
+      }
+      @include screen("xs_mobile") {
+        display: none;
+      }
+    }
+    .update {
+      width: 150px;
+      @media screen and (max-width: 767px) {
+        margin-left: 5px;
+      }
+    }
+    a {
+      padding: 0px;
+      position: relative;
+      height: auto;
+      line-height: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0px 0.2em;
+      min-width: 32px;
+      text-align: center;
+      text-indent: -9999px;
+      height: 34px;
+      color: #757575;
+      @include text-overflow;
+      @include box-sizing;
+      margin-bottom: 0.1em;
+      @include screen("mobile") {
+        max-width: 2em;
+        margin: 0px auto 0.5em 0px;
+      }
+      &:hover,
+      &:focus {
+        &:before {
+          content: "";
+          z-index: 99;
+          position: absolute;
+          border-radius: 4px;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          box-shadow: 0px 0px 0px 2px $aHover inset;
         }
       }
+      .kb {
+        font-size: 0.75em;
+        color: #666;
+        display: none;
+        margin: 0px 0.5em;
+      }
+      &:after {
+        content: "";
+        background: url(../images/basic/icon_file.png) no-repeat center center;
+        background-size: contain;
+        width: 26px;
+        height: 28px;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        text-align: right;
+      }
+      // word系列
+      &[href$="doc"],
+      &.doc {
+        &:after {
+          background: url(../images/basic/icon_doc.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="docx"],
+      &.docx {
+        &:after {
+          background: url(../images/basic/icon_docx.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="odt"],
+      &.odt {
+        &:after {
+          background: url(../images/basic/icon_odt.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      // excel系列
+      &[href$="xls"],
+      &.xls {
+        &:after {
+          background: url(../images/basic/icon_xls.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="csv"],
+      &.csv {
+        &:after {
+          background: url(../images/basic/icon_csv.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="ods"],
+      &.ods {
+        &:after {
+          background: url(../images/basic/icon_ods.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="xlsx"],
+      &.xlsx {
+        &:after {
+          background: url(../images/basic/icon_xlsx.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      // pdf系列
+      &[href$="pdf"],
+      &.pdf {
+        &:after {
+          background: url(../images/basic/icon_pdf.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="ppt"],
+      &.ppt {
+        &:after {
+          background: url(../images/basic/icon_ppt.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="pptx"],
+      &.pptx {
+        &:after {
+          background: url(../images/basic/icon_pptx.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="odp"],
+      &.odp {
+        &:after {
+          background: url(../images/basic/icon_odp.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      // 其他格式
+      &[href$="zip"],
+      &.zip {
+        &:after {
+          background: url(../images/basic/icon_zip.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="txt"],
+      &.txt {
+        &:after {
+          background: url(../images/basic/icon_txt.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="mov"],
+      &.mov {
+        &:after {
+          background: url(../images/basic/icon_mov.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="mp3"],
+      &.mp3 {
+        &:after {
+          background: url(../images/basic/icon_mp3.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="jpg"],
+      &.jpg {
+        &:after {
+          background: url(../images/basic/icon_jpg.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="wmv"],
+      &.wmv {
+        &:after {
+          background: url(../images/basic/icon_wmv.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+      &[href$="mp4"],
+      &.mp4 {
+        &:after {
+          background: url(../images/basic/icon_mp4.png) no-repeat center center;
+          background-size: contain;
+        }
+      }
+    }
+  }
+}
 // 外部連結
 .web_link {
   width: 100%;
@@ -383,9 +404,9 @@ div.tag {
   h3 {
     font-size: 1.25em;
     padding: 8px 0px 8px 0px;
-    margin: .5em 0px .5em;
+    margin: 0.5em 0px 0.5em;
     border-bottom: 3px solid $primaryColor;
-    &:before{
+    &:before {
       content: "";
       width: 24px;
       height: 24px;
@@ -404,7 +425,7 @@ div.tag {
   }
   li {
     position: relative;
-    border-bottom: 1px solid #EEE;
+    border-bottom: 1px solid #eee;
     a {
       padding: 10px 0px 10px 35px;
       position: relative;
@@ -431,23 +452,23 @@ div.tag {
   margin: 0 0 1.5em 0;
   border-left: solid 5px $primaryColor;
   padding: 0.8em 1.5em 0.8em;
-  background: #F2F2F2;
+  background: #f2f2f2;
   @extend %clearfix;
   @include box-sizing;
-  @include screen('mobile') {
+  @include screen("mobile") {
     font-size: 0.938em;
   }
   li {
     width: 32%;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
     display: inline-block;
     vertical-align: top;
-    @include screen('tablet') {
+    @include screen("tablet") {
       width: 48%;
-      margin-bottom: .2em;
+      margin-bottom: 0.2em;
       font-size: 0.875em;
     }
-    @include screen('mobile') {
+    @include screen("mobile") {
       width: 100%;
       display: block;
     }
