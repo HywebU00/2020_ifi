@@ -261,7 +261,7 @@ $(function() {
             }
         });
     }
-    
+
     /*-----------------------------------*/
     //////////// notice訊息區塊 ////////////
     /*-----------------------------------*/
@@ -290,18 +290,38 @@ $(function() {
     /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
-    $('.btn-fatfooter').click(function(e) {
-        $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
-            if ($(this).is(':visible')) {
-                $('.btn-fatfooter').html("收合/CLOSE");
-                $('.btn-fatfooter').attr('name', '收合選單/CLOSE');
-            } else {
-                $('.btn-fatfooter').html("展開/OPEN");
-                $('.btn-fatfooter').attr('name', '展開選單/OPEN');
-            }
+    // $('.btn-fatfooter').click(function(e) {
+    //     $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
+    //         if ($(this).is(':visible')) {
+    //             $('.btn-fatfooter').html("收合/CLOSE");
+    //             $('.btn-fatfooter').attr('name', '收合選單/CLOSE');
+    //         } else {
+    //             $('.btn-fatfooter').html("展開/OPEN");
+    //             $('.btn-fatfooter').attr('name', '展開選單/OPEN');
+    //         }
+    //     });
+    //     $(this).stop(true, true).toggleClass('close');
+    // });
+    $(".btn-fatfooter").click(function () {
+        var $subMenus = $(".fatfooter nav > ul > li > ul");
+        var isExpanded = $(this).attr("aria-expanded") === "true";
+
+        // 切換所有次級選單
+        $subMenus.stop(true, true).slideToggle();
+
+        // 更新無障礙屬性
+        $subMenus.each(function () {
+            $(this).attr("aria-hidden", isExpanded ? "true" : "false");
         });
-        $(this).stop(true, true).toggleClass('close');
+
+        // 更新按鈕狀態
+        $(this).attr("aria-expanded", !isExpanded);
+        $(this).html(isExpanded ? "展開/OPEN" : "收合/CLOSE");
+
+        // 切換 close 樣式
+        $(this).toggleClass("close");
     });
+
     /*-----------------------------------*/
     //////////////相簿燈箱//////////////
     /*-----------------------------------*/
@@ -380,7 +400,7 @@ $(function() {
             //取縮圖 img src
             THUMB_PIC = $('.album .thumbnail').eq(PIC_INDEX).find('.img-container picture source:first').attr('data-srcset');
             // 沒寫picture
-            // THUMB_PIC = $('.album .thumbnail').eq(PIC_INDEX).find('.img-container img').attr('src');  
+            // THUMB_PIC = $('.album .thumbnail').eq(PIC_INDEX).find('.img-container img').attr('src');
             THUMB_H3 = $('.album .thumbnail').eq(PIC_INDEX).find('.img-container img').attr('alt');
             $('.album .lightbox .caption').html(THUMB_H3);
             $('.album .lightbox img').hide();
