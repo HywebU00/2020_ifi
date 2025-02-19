@@ -502,13 +502,27 @@ $(function() {
     /*-----------------------------------*/
     /////click event to scroll to top//////
     /*-----------------------------------*/
-    $('.scrollToTop').click(function(e) {
-        $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutExpo');
+    // $('.scrollToTop').click(function(e) {
+    //     $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutExpo');
+    //     e.preventDefault();
+    // });
+    // $('.scrollToTop').keydown(function(e) {
+    //     _body.find('a:first').focus();
+    //     e.preventDefault();
+    // });
+    $('.scrollToTop')
+        .off()
+        .on('click', function (e) {
+        $('html, body').stop().animate({ scrollTop: 0 }, 400, 'linear');
+        $('a.goCenter').focus(); //加入這行
         e.preventDefault();
-    });
-    $('.scrollToTop').keydown(function(e) {
-        _body.find('a:first').focus();
+        });
+    $('.scrollToTop').keydown(function (e) {
+        if (e.code == 'Enter' && !e.shiftKey) {
         e.preventDefault();
+        _body.find('a.goCenter').focus();
+        $('html, body').stop().animate({ scrollTop: 0 }, 400, 'linear');
+        }
     });
     /*--------------------------------------------------------*/
     /////設定img 在IE9+ SAFARI FIREFOX CHROME 可以object-fit/////
